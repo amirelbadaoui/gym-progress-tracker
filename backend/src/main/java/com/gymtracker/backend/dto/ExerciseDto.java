@@ -1,20 +1,11 @@
-package com.gymtracker.backend.entity;
+package com.gymtracker.backend.dto;
 
 import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "exercises")
-public class Exercise {
+public class ExerciseDto {
 	
 	/** The id of the exercise */
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	/** The name of the exercise */
@@ -67,3 +58,4 @@ public class Exercise {
 	
 	
 }
+
