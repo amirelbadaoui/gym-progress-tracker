@@ -12,3 +12,7 @@ backend/.project
 .DS_Store
 .idea/
 *.iml
+
+# My Additions
+.project
+.settings
