@@ -66,32 +66,7 @@ public class ExerciseController {
      */
     @PostMapping
     public ResponseEntity<ExerciseDto> createExercise(@RequestBody ExerciseDto ExerciseDto) {
-    	if (ExerciseService.isDuplicateName(ExerciseDto.getName())) {
-    		return new ResponseEntity<>(ExerciseDto, HttpStatus.CONFLICT);
-    	}
-    	
-    	if(ExerciseDto.getPrice() < 0) {
-    		return new ResponseEntity<>(ExerciseDto, HttpStatus.BAD_REQUEST);
-    	}
-    	
-    	if(ExerciseDto.getIngredients().size() == 0) {
-    		return new ResponseEntity<>(ExerciseDto, HttpStatus.BAD_REQUEST);
-    	}
-    	
-    	List<Ingredient> ingredients = ExerciseDto.getIngredients();
-    	
-    	for(Ingredient i : ingredients) {
-    		if(i.getAmount() < 0) {
-    			return new ResponseEntity<>(ExerciseDto, HttpStatus.BAD_REQUEST);
-    		}
-    	}
-    	
-    	if (ExerciseService.getAllExercises().size() < 3) {
-    		ExerciseDto savedExerciseDto = ExerciseService.createExercise(ExerciseDto);
-    		return ResponseEntity.ok(savedExerciseDto);
-    	} else {
-    		return new ResponseEntity<>(ExerciseDto, HttpStatus.INSUFFICIENT_STORAGE);
-    	}
+    	return null;
     }
     
     /**
@@ -125,23 +100,7 @@ public class ExerciseController {
      */
     @PutMapping("{ExerciseId}")
     public ResponseEntity<ExerciseDto> updateExercise(@PathVariable("ExerciseId") Long ExerciseId, @RequestBody ExerciseDto ExerciseDto) {
-    	if(ExerciseDto.getPrice() < 0) {
-    		return new ResponseEntity<>(ExerciseDto, HttpStatus.BAD_REQUEST);
-    	}
-    	
-    	if(ExerciseDto.getIngredients().size() == 0) {
-    		return new ResponseEntity<>(ExerciseDto, HttpStatus.BAD_REQUEST);
-    	}
-    	
-    	List<String> targetedMuscles = ExerciseDto.getTargetedMuscles();
-    	
-
-    	
-    	
-    	ExerciseDto savedExercise = ExerciseService.updateExercise(ExerciseId, ExerciseDto);
-    	
-    	
-    	return ResponseEntity.ok(savedExercise);
+    	return null;
     }
     
     
